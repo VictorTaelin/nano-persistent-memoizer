@@ -43,4 +43,6 @@ var ba_ = memoB("ba").async(x => Promise.resolve("bad"));
 
   ns.clear();
   na.clear();
+
+  console.log("ok");
 })();

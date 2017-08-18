@@ -32,7 +32,7 @@ module.exports = function(name) {
   };
 
   function clear() {
-    Object.keys(window.localStorage).forEach(key => {
+    Object.keys(window.localStorage).forEach(function(key) {
       if (key.slice(0,name.length) === name) {
         window.localStorage.removeItem(key);
       }
