@@ -29,7 +29,7 @@ module.exports = function(name) {
         if (exists) {
           fs.readFile(valPath(key), "utf8", (err, val) => {
             if (err) {
-              func(key).then(resolve);
+              func(key).then(resolve).catch(reject);
             } else {
               resolve(val);
             }
@@ -39,7 +39,7 @@ module.exports = function(name) {
             fs.writeFile(valPath(key), val, err => {
               resolve(val);
             })
-          });
+          }).catch(reject);
         }
       });
     });
